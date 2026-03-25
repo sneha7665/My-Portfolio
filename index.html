@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sneha | DevOps Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Animation Library -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#020617;
+color:white;
+overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+display:flex;
+justify-content:space-between;
+padding:20px 60px;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(12px);
+z-index:1000;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+}
+
+/* HERO WITH BACKGROUND */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background:
+linear-gradient(rgba(2,6,23,.8),rgba(2,6,23,.9)),
+url("https://images.unsplash.com/photo-1519389950473-47ba0277781c");
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.highlight{
+color:#38bdf8;
+}
+
+.typing{
+margin-top:20px;
+font-size:22px;
+color:#38bdf8;
+}
+
+/* SECTIONS */
+section{
+padding:120px 10%;
+position:relative;
+}
+
+.section-bg{
+background:
+linear-gradient(rgba(2,6,23,.9),rgba(2,6,23,.9)),
+url("https://images.unsplash.com/photo-1451187580459-43490279c0fa");
+background-size:cover;
+background-attachment:fixed;
+}
+
+h2{
+color:#38bdf8;
+margin-bottom:30px;
+font-size:34px;
+}
+
+/* ABOUT */
+.about{
+max-width:800px;
+line-height:1.7;
+}
+
+/* SKILLS */
+.skills span{
+display:inline-block;
+background:#0f172a;
+padding:12px 18px;
+margin:8px;
+border-radius:25px;
+transition:.4s;
+}
+
+.skills span:hover{
+transform:translateY(-6px);
+background:#38bdf8;
+color:black;
+}
+
+/* PROJECT CARDS */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(15,23,42,0.7);
+padding:30px;
+border-radius:15px;
+transition:.4s;
+backdrop-filter:blur(10px);
+}
+
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 0 30px rgba(56,189,248,.5);
+}
+
+/* CONTACT */
+.contact a{
+color:#38bdf8;
+text-decoration:none;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#94a3b8;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div><b>Sneha</b></div>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+<div>
+<h1>Hello, I'm <span class="highlight">Sneha</span></h1>
+<div class="typing" id="typing"></div>
+</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" data-aos="fade-up">
+<h2>About Me</h2>
+<p class="about">
+Aspiring DevOps & Cloud Engineer passionate about automation,
+cloud infrastructure and scalable deployments. Currently learning AWS,
+Docker, Linux and CI/CD workflows while building strong fundamentals.
+</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section-bg" data-aos="fade-right">
+<h2>Skills</h2>
+
+<div class="skills">
+<span>Linux</span>
+<span>AWS</span>
+<span>Docker</span>
+<span>Git & GitHub</span>
+<span>CI/CD</span>
+<span>Shell Scripting</span>
+<span>Networking</span>
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" data-aos="zoom-in">
+<h2>Learning Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+<h3>AWS Practice</h3>
+<p>Launching EC2 and understanding IAM roles.</p>
+</div>
+
+<div class="card">
+<h3>Docker Learning</h3>
+<p>Container creation and deployment workflow.</p>
+</div>
+
+<div class="card">
+<h3>CI/CD Study</h3>
+<p>Learning automation pipeline concepts.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-bg" data-aos="fade-left">
+<h2>Contact</h2>
+
+<div class="contact">
+<p>Email: airodagisneha@gmail.com</p>
+<p>GitHub: <a href="https://github.com/sneha7665">github.com/sneha7665</a></p>
+<p>LinkedIn: <a href="www.linkedin.com/in/snehaairodagi">www.linkedin.com/in/snehaairodagi</a></p>
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Sneha | DevOps Portfolio</p>
+</footer>
+
+<!-- Typing Animation -->
+<script>
+const roles=["DevOps Engineer","Cloud Engineer","AWS Learner","Automation Enthusiast"];
+let i=0,j=0,current="",del=false;
+
+function type(){
+current=roles[i];
+document.getElementById("typing").textContent=current.substring(0,j);
+
+if(!del && j++===current.length){del=true;setTimeout(type,1000);return;}
+if(del && j--===0){del=false;i=(i+1)%roles.length;}
+setTimeout(type,del?60:120);
+}
+type();
+</script>
+
+<!-- Scroll Animation Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({
+duration:1200,
+once:false
+});
+</script>
+
+</body>
+</html>
