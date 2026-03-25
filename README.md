@@ -61,13 +61,10 @@ This setup mirrors a production-ready DevOps deployment pipeline.
 ## ▶️ How to Run Locally
 
 ### 1️⃣ Build Docker Image
-bash
 docker build -t devops-portfolio .
 
 ### 2️⃣ Run Container
-bash
 docker run -p 8080:80 devops-portfolio
 
 ### 3️⃣ Open in Browser
-bash
 http://localhost:8080
