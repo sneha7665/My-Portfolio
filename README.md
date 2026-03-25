@@ -19,6 +19,21 @@ This project demonstrates containerization and deployment of a static portfolio 
 ## 🏗 Architecture
 User Browser → Docker Container → Nginx Server → Portfolio Website
 
+## ☁️ Cloud Deployment Architecture (AWS Ready)
+
+This application is designed following cloud deployment practices:
+
+User → Internet → AWS EC2 Instance → Docker Container → Nginx → Portfolio Website
+
+### Planned AWS Setup
+- EC2 instance for compute
+- Docker for containerization
+- Nginx for web serving
+- Security Groups for traffic control
+- Public IP access via browser
+
+This setup simulates a production-ready DevOps deployment.
+
 ## ▶️ How to Run
 
 ```bash
