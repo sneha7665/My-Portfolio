@@ -4,6 +4,11 @@
 This project demonstrates containerization and deployment of a static portfolio website using Docker and Nginx.  
 The goal is to simulate a real-world DevOps workflow where an application is packaged into a container and served through a production-grade web server, following cloud deployment practices.
 
+## 📸 Project Preview
+![alt text](<Project Preview.png>)
+![alt text](Website.png)
+![alt text](<docker commands.png>)
+
 ---
 
 ## 🧰 Tech Stack
